@@ -16,22 +16,22 @@ type Providers = Record<string, Provider>;
 const AuthProviders = () => {
   const [providers, setProviders] = useState<Providers | null>(null);
 
-  useEffect(() => {
-    const fetchProviders = async () => {
-      const res = await getProviders();
-      console.log(res);
-      // setProviders(res);
-    }
+  // useEffect(() => {
+  //   const fetchProviders = async () => {
+  //     const res = await getProviders();
+  //     console.log(res);
+  //     // setProviders(res);
+  //   }
 
-    fetchProviders();
-  })
+  //   fetchProviders();
+  // })
 
   if(providers){
     console.log('providers', providers);
     return (
       <div>
         {Object.values(providers).map((provider: Provider, i) =>(
-          <button key={i}>{provider.id}</button>
+          <button onClick={() => signIn()} key={i}>{provider.id}</button>
         ))}
       </div>
     )

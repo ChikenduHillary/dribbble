@@ -8,7 +8,7 @@ type ColumnProps = {
 }
 
 const FooterColum = ({title, links}: ColumnProps) => (
-  <div className="footer_column">
+  <div className="flex-1 flex flex-col gap-3 text-sm min-w-max">
     <h4 className="font-semibold">{title}</h4>
     <ul>
       {links.map((link) => (
@@ -20,7 +20,7 @@ const FooterColum = ({title, links}: ColumnProps) => (
 
 const Footer = () => {
   return (
-    <footer className="flexStart footer">
+    <footer className="flex items-center justify-start flex-col paddings w-full gap-20 bg-light-white">
       <div className="flex flex-col gap-12 w-full">
         <Image 
           src='/logo-purple.svg'
@@ -48,7 +48,7 @@ const Footer = () => {
         <FooterColum title={footerLinks[6].title} links={footerLinks[6].links} />
       </div>
 
-      <div className='flexBetween footer_copyright'>
+      <div className='flex justify-between items-center max-sm:flex-col w-full text-sm font-normal'>
         <p>@ 2023 Flexible. All rights reserved</p>
         <p className="text-gray">
           <span className="text-black font-semibold">10,214</span> projects submitted.
